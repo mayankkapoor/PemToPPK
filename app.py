@@ -1,11 +1,11 @@
 from flask import Flask, request, json,Response
 import os
-import logging
-handler = logging.FileHandler('/var/log/app.log') # errors logged to this file
-handler.setLevel(logging.ERROR) 
+#import logging
+#handler = logging.FileHandler('/var/log/app.log') # errors logged to this file
+#handler.setLevel(logging.ERROR)
 app = Flask(__name__)
 cwd = os.getcwd()
-app.logger.addHandler(handler)  # attach the handler to the app's logger
+#app.logger.addHandler(handler)  # attach the handler to the app's logger
 
 
 @app.route("/")
@@ -36,7 +36,7 @@ def pemtoppk():
             os.system("rm -rf "+ ppkFileName)
             return resp
         except Exception as ex:
-            app.logger.error(ex)
+#            app.logger.error(ex)
             print (ex)
             return Response(error = ex,status=400,mimetype='text/html')
 
