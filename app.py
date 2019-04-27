@@ -18,9 +18,14 @@ def pemtoppk():
             pemFile = open(pemFileName, "w")
             pemFile.write(pem_key)
             pemFile.close()
-            ppkKey = os.system("puttygen " + pemFileName + " -O private")
+            ppkFileName = "key.ppk"
+            os.system("puttygen " + pemFileName + " -O private -o " + ppkFileName)
+            ppkFile = open(ppkFileName, "r")
+            ppkKey = ppkFile.read()
             print("ppkKey: ", ppkKey)
             resp = Response(ppkKey, status=200, mimetype='text/html')
+            os.system("rm "+ pemFileName)
+            os.system("rm "+ ppkFileName)
             return resp
         except Exception as ex:
             print(ex)
@@ -28,4 +33,4 @@ def pemtoppk():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=False)
+    app.run(host='0.0.0.0', port=5000, debug=True)

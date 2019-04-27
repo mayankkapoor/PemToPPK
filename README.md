@@ -16,7 +16,6 @@ Body: In form-data, enter following key value data
 ```
 {
 "pem_key":"paste your RSA format .pem key in text format"
-"output_filename": "Input some ppk file name"
 }
 ```
 It is very important to input the pem_key in RSA format only, otherwise
