@@ -1,4 +1,4 @@
-FROM python:3.4.9-slim-jessie
+FROM python:3.5-slim
 
 MAINTAINER mayankkapoormail@gmail.com, dineshkumar13506@gmail.com
 # Update aptitude with new repo
@@ -10,7 +10,7 @@ WORKDIR /usr/src/app
 # Install required software
 RUN    apt-get update \
     && apt-get install -y putty-tools
-RUN    pip install pathlib \ 
+RUN    pip install pathlib \
     && pip install Flask \
     && pip install flask_json
 
@@ -18,4 +18,4 @@ RUN    pip install pathlib \
 COPY app.py .
 
 EXPOSE 5000
-ENTRYPOINT ["python", "/usr/src/app/app.py"] 
+ENTRYPOINT ["python", "/usr/src/app/app.py"]
