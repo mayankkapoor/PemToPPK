@@ -1,8 +1,9 @@
 FROM python:3.5-slim
 
 MAINTAINER mayankkapoormail@gmail.com, dineshkumar13506@gmail.com
-# Update aptitude with new repo
-ENV LC_ALL=C
+
+ENV LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8
 
 # Create app directory
 WORKDIR /usr/src/app
