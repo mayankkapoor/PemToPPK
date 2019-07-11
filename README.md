@@ -22,11 +22,12 @@ Body: In form-data, enter following key value data
 It is very important to input the pem_key in RSA format only, otherwise
 the service will throw an error.
 PEM or base64 format key example:
------BEGIN FOO BAR KEY-----
+
+-----BEGIN RSA FOO BAR KEY-----
 MIIBgjAcBgoqhkiG9w0BDAEDMA4ECKZesfWLQOiDAgID6ASCAWBu7izm8N4V
 2puRO/Mdt+Y8ceywxiC0cE57nrbmvaTSvBwTg9b/xyd8YC6QK7lrhC9Njgp/
 ...
------END FOO BAR KEY-----
+-----END RSA FOO BAR KEY-----
 
 Response:
 Content of .ppk file in text format.
